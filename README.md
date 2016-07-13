@@ -15,3 +15,12 @@ npm install
 [ReactNative中文安装教程](http://reactnative.cn/docs/0.28/getting-started.html#content)
 
 [ReactNative英文安装教程](http://facebook.github.io/react-native/docs/getting-started.html)
+
+---
+#demo的gif展示
+
+![iOS demo](https://github.com/strawferry/Onion-math-demo/blob/master/iOS-demo.gif)
+
+---
+
+![Android demo](https://github.com/strawferry/Onion-math-demo/blob/master/Android-demo.gif)
