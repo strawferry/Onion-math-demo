@@ -24,3 +24,6 @@ npm install
 ---
 
 ![Android demo](https://github.com/strawferry/Onion-math-demo/blob/master/Android-demo.gif)
+
+---
+![Web demo](https://github.com/strawferry/Onion-math-demo/blob/master/Web-demo.gif)
