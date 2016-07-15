@@ -71,15 +71,15 @@ export  default class Chose extends Component {
         </Text>
         <View style={[styles.choseView]}>
           {this.props.data.xx.map((item, i, items)=>{
-            let newVar = this.props.data.da == i ? <View style={[styles.rightView]}><Image style={styles.right} source={require('./images/right.png')} /></View>:null;
-            let newVar2 = this.props.data.da == i ? null:<View style={[styles.wrongView]}><Image style={styles.wrong} source={require('./images/wrong.png')}/></View>;
-            let newlet = this.state.select == i ? newVar2 :null;
+            let rightV = this.props.data.da == i ? <View style={[styles.rightView]}><Image style={styles.right} source={require('./images/right.png')} /></View>:null;
+            let temp = this.props.data.da == i ? null:<View style={[styles.wrongView]}><Image style={styles.wrong} source={require('./images/wrong.png')}/></View>;
+            let wrongV = this.state.select == i ? temp :null;
             return <TouchableOpacity key={`data-xx-${i}`} onPress={()=>{this._change(i);}}>
               <View style={[styles.chose, this.state.select == i ? styles.selectBGC:styles.choseBGC]}>
                 <View style={[styles.AView]}>
                   <Text style={[styles.AText, this.state.select == i ? styles.selectFontColor:styles.AFontColor]}>{ABC[i]}</Text>
-                  {this.props.showAs ? newVar :null}
-                  {this.props.showAs ? newlet :null}
+                  {this.props.showAs ? rightV :null}
+                  {this.props.showAs ? wrongV :null}
                 </View>
                 <View style={[styles.sip]} />
                 <View style={[styles.marginL]}>
