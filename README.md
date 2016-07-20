@@ -27,3 +27,5 @@ npm install
 
 ---
 ![Web demo](https://github.com/strawferry/Onion-math-demo/blob/master/Web-demo.gif)
+---
+![Weibo demo](https://github.com/strawferry/Onion-math-demo/blob/master/weibo-demo.gif)
