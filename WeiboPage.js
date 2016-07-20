@@ -49,6 +49,7 @@ export default class WeiboPage extends Component {
       });
     }).catch((error) => {
       console.warn(error);
+      this.setState({isRefreshing: false});
     });
 
   };
@@ -58,16 +59,14 @@ export default class WeiboPage extends Component {
     fetch(url).then((response) => response.text()).then((responseText) => {
       let data = JSON.parse(responseText);
       let bb = data.statuses;
-      this.setState({
-        data: [],
-      },()=>{
         this.setState({
           dataSource: this.ds.cloneWithRows(bb),
           isRefreshing: false,
+          data: [...bb],
         });
-      });
     }).catch((error) => {
       console.warn(error);
+      this.setState({isRefreshing: false});
     });
   };
   _moreData = ()=>{
@@ -86,6 +85,7 @@ export default class WeiboPage extends Component {
       });
     }).catch((error) => {
       console.warn(error);
+      this.setState({isRefreshing: false});
     });
   };
   _renderRow = (rowData, sectionID, rowID, highlightRow)=>{
@@ -134,7 +134,7 @@ export default class WeiboPage extends Component {
           dataSource={this.state.dataSource}
           renderRow={(rowData, sectionID, rowID, highlightRow) => this._renderRow(rowData, sectionID, rowID, highlightRow)}
           enableEmptySections = {true}
-          initialListSize={4}
+          initialListSize={8}
           onEndReachedThreshold={50}
           onEndReached={()=>this._moreData()}
           refreshControl= {<RefreshControl
