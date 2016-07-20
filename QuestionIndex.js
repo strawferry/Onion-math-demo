@@ -20,6 +20,7 @@ import {
 } from 'react-native';
 
 import  QuestionPage from "./QuestionPage.js";
+import  WeiboPage from "./WeiboPage.js";
 
 export default class QuestionIndex extends Component {
   state = {
@@ -47,6 +48,21 @@ export default class QuestionIndex extends Component {
         <Text style={styles.instructions}>
           点击开始答题
         </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=>{
+        const { navigator } = this.props;
+            if(navigator) {
+                navigator.push({
+                                    name: 'WeiboPage',
+                                    component: WeiboPage,
+                                    params: {
+                                    }
+                                    });
+            }
+        }}>
+          <Text style={styles.instructions}>
+            刷下微博!
+          </Text>
         </TouchableOpacity>
       </View>
     );

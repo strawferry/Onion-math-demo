@@ -16,6 +16,8 @@ import {
   StatusBar,
 } from 'react-native';
 
+import WeiboPage from "./WeiboPage.js";
+
 
 export default class ResultPage extends Component {
   state = {
@@ -63,6 +65,21 @@ export default class ResultPage extends Component {
         }}>
           <Text style={styles.instructions}>
             休息一下!
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=>{
+        const { navigator } = this.props;
+            if(navigator) {
+                navigator.push({
+                                    name: 'WeiboPage',
+                                    component: WeiboPage,
+                                    params: {
+                                    }
+                                    });
+            }
+        }}>
+          <Text style={styles.instructions}>
+            刷下微博!
           </Text>
         </TouchableOpacity>
       </View>
